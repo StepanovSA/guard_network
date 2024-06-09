@@ -24,14 +24,18 @@ sudo nmap -sV < ip-адрес >
 
 
 # Ответ 1
+Судя по логам, Suricata показал себя после всех запросов, кроме -sA. В остальных же случаях лог Suricata выдает, что происходило подозрительное сканирование и классификация идет как "Потенциально опасный трафик" и "Возможна утечка информации" ( Attempted Information Leak) .
+Fail2Ban во всех случаях молчал
 
 
-![alt text](https://github.com/StepanovSA/InfSecurity1/blob/main/MTSF%201.png)
-![alt text](https://github.com/StepanovSA/InfSecurity1/blob/main/MTSF%201.png)
-![alt text](https://github.com/StepanovSA/InfSecurity1/blob/main/MTSF%201.png)
-![alt text](https://github.com/StepanovSA/InfSecurity1/blob/main/MTSF%201.png)
-![alt text](https://github.com/StepanovSA/InfSecurity1/blob/main/MTSF%201.png)
 
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/Kali%201.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%201.1.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%201.2.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%201.3.png)
 
 # Задание 2
 
@@ -53,4 +57,19 @@ hydra -L users.txt -P pass.txt < ip-адрес > ssh
 В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.
 
 # Ответ 2
+Fail2ban выключен. Suricata также показывает сканирование ssh.
 
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/Kali%202.1.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%202.1%20fail%202ban.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%202.2%20log.png)
+
+
+Fail2ban включен. Как мы видим , что пароли не были подобраны. Во время включенного Fail2ban, и попытки на Kali подобрать пароль, она была заблокирована.
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/Kali%202.2.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%202.3%20active%202ban.png)
+
+![alt text](https://github.com/StepanovSA/guard_network/blob/main/deb%202.4%20log%202ban.png)
